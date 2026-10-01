@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://danieladare35-dotcom.github.io/-danieldare.github.io/sitemap.xml
