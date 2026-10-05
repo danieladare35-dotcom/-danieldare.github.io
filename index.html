@@ -1,261 +1,46 @@
-<!doctype html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Daniel A. Dare is an experienced book marketer and reader discovery strategist helping authors connect their books with the right readers and communities worldwide.">
-  <meta name="theme-color" content="#171513">
-  <title>Daniel A. Dare | Book Marketing & Reader Discovery</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23171513'/%3E%3Ctext x='50' y='63' font-size='54' text-anchor='middle' fill='%23f3eadb' font-family='Georgia'%3ED%3C/text%3E%3C/svg%3E">
-  <style>
-    :root{
-      --bg:#f4f0e9; --paper:#fffdf9; --ink:#171513; --muted:#6e6961; --line:#ddd5ca;
-      --accent:#a36e3d; --dark:#1a1815; --dark-soft:#25211c; --cream:#ece3d5;
-      --max:1180px; --radius:24px; --shadow:0 18px 60px rgba(29,24,19,.10);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.62}
-    body,button,input,textarea{font-synthesis:none}
-    a{text-decoration:none;color:inherit}
-    .wrap{width:min(calc(100% - 40px),var(--max));margin:0 auto}
-    .sans{font-family:Inter,Arial,Helvetica,sans-serif}
-    .eyebrow{font:700 11px/1.2 Inter,Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
-    .pill{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid var(--line);border-radius:999px;font:700 11px Inter,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#514c45;background:rgba(255,255,255,.5)}
-    nav{position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(221,213,202,.85);background:rgba(244,240,233,.92);backdrop-filter:blur(14px)}
-    .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:28px}
-    .brand{font-size:20px;font-weight:700;letter-spacing:-.02em}
-    .brand small{display:block;margin-top:2px;font:700 10px Inter,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-    .navlinks{display:flex;align-items:center;gap:26px;font:600 13px Inter,Arial,sans-serif}
-    .navlinks a:hover{color:var(--accent)}
-    .navlinks .cta{padding:11px 16px;border-radius:999px;background:var(--ink);color:white}
-    header{padding:105px 0 92px;overflow:hidden}
-    .hero{display:grid;grid-template-columns:1.03fr .97fr;gap:72px;align-items:center}
-    h1{font-size:clamp(54px,7vw,92px);line-height:.97;letter-spacing:-.055em;margin:18px 0 26px}
-    .hero h2{font-size:clamp(24px,3vw,37px);line-height:1.2;font-weight:500;letter-spacing:-.025em;margin:0 0 23px}
-    .lead{font-size:19px;color:#49453f;max-width:690px}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 21px;border-radius:999px;border:1px solid var(--ink);font:700 13px Inter,Arial,sans-serif;transition:transform .18s ease,box-shadow .18s ease}
-    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(22,19,16,.10)}
-    .btn.dark{background:var(--ink);color:white}
-    .btn.light{background:transparent}
-    .hero-visual{position:relative;min-height:520px}
-    .book-card{position:absolute;right:9%;top:1%;width:min(390px,78%);aspect-ratio:3/4;background:var(--dark);border-radius:26px;box-shadow:var(--shadow);padding:36px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;color:#f9f2e8}
-    .book-card:before{content:'';position:absolute;width:340px;height:340px;border:1px solid rgba(255,255,255,.11);border-radius:50%;top:-115px;right:-90px}
-    .book-card:after{content:'';position:absolute;width:190px;height:190px;border:1px solid rgba(255,255,255,.09);border-radius:50%;bottom:-70px;left:-60px}
-    .book-mark{position:relative;z-index:1;font:700 10px Inter,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#cdb28f}
-    .book-title{position:relative;z-index:1;font-size:42px;line-height:1.02;letter-spacing:-.04em;max-width:270px}
-    .book-note{position:relative;z-index:1;font:500 13px/1.5 Inter,Arial,sans-serif;color:#c8c2b8;max-width:250px}
-    .side-note{position:absolute;left:0;bottom:4%;width:230px;padding:19px;background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:0 13px 34px rgba(30,26,21,.08);z-index:2}
-    .side-note strong{display:block;font-size:18px;margin-bottom:4px}
-    .side-note span{font:13px/1.5 Inter,Arial,sans-serif;color:var(--muted)}
-    section{padding:94px 0}
-    .dark-section{background:var(--dark);color:#f7f1e8}
-    .section-head{max-width:790px;margin-bottom:45px}
-    h3{margin:14px 0 18px;font-size:clamp(36px,5vw,58px);line-height:1.04;letter-spacing:-.045em}
-    .intro{font-size:18px;color:var(--muted)}
-    .dark-section .intro{color:#c5bfb6}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:31px}
-    .card .index{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--cream);font:700 11px Inter,Arial,sans-serif;margin-bottom:24px}
-    .card h4{font-size:25px;line-height:1.16;margin:0 0 10px}
-    .card p{margin:0;color:var(--muted);font-size:15px}
-    .dark-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}
-    .steps{display:grid;gap:0}
-    .step{display:grid;grid-template-columns:58px 1fr;gap:18px;padding:23px 0;border-top:1px solid rgba(255,255,255,.14)}
-    .step:last-child{border-bottom:1px solid rgba(255,255,255,.14)}
-    .step-num{font:700 11px Inter,Arial,sans-serif;letter-spacing:.12em;color:#c99b6f;padding-top:4px}
-    .step h4{margin:0 0 5px;font-size:21px}
-    .step p{margin:0;font:14px/1.6 Inter,Arial,sans-serif;color:#bdb6ad}
-    .audiences{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px}
-    .audience{padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.35)}
-    .audience strong{display:block;font-size:17px;margin-bottom:3px}
-    .audience span{font:13px/1.5 Inter,Arial,sans-serif;color:var(--muted)}
-    .about{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-    .about-box{padding:35px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)}
-    .about-box p{font-size:19px;margin:0;color:#3f3b36}
-    .highlight{margin-top:24px;padding:20px 22px;border-left:3px solid var(--accent);background:var(--cream);font-size:16px}
-    .work{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .work-card{padding:34px;border-radius:24px;background:var(--dark-soft);border:1px solid #39342d;color:#f4ede2}
-    .work-card .eyebrow{color:#cba17b}
-    .work-card h4{font-size:27px;line-height:1.12;margin:12px 0}
-    .work-card p{margin:0 0 22px;color:#c8c0b5;font-size:15px}
-    .work-card a{font:700 12px Inter,Arial,sans-serif;color:#f3d2ae}
-    .faq{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    details{background:var(--paper);border:1px solid var(--line);border-radius:17px;padding:18px 20px}
-    summary{cursor:pointer;font-size:18px;font-weight:700}
-    details p{margin:12px 0 0;color:var(--muted);font-size:15px}
-    .contact-box{background:linear-gradient(135deg,#e7ddce,#f8f4ed);border:1px solid var(--line);border-radius:30px;padding:52px}
-    .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:end}
-    .contact-email{display:inline-block;margin-top:14px;font:700 19px Inter,Arial,sans-serif}
-    .contact-meta{margin-top:18px;color:var(--muted);font:13px/1.6 Inter,Arial,sans-serif}
-    footer{padding:34px 0 52px}
-    .footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--line);font:12px Inter,Arial,sans-serif;color:var(--muted)}
-    .mobile-menu{display:none}
-    @media (max-width:950px){
-      .hero,.dark-grid,.contact-grid{grid-template-columns:1fr}.hero{gap:45px}.hero-visual{min-height:470px}.cards{grid-template-columns:1fr}.about,.work,.faq{grid-template-columns:1fr}.navlinks a:not(.cta){display:none}
-    }
-    @media (max-width:620px){
-      .wrap{width:min(calc(100% - 28px),var(--max))}.nav{min-height:70px}.brand{font-size:18px}header{padding:70px 0 65px}section{padding:70px 0}h1{font-size:55px}.hero h2{font-size:27px}.lead{font-size:17px}.hero-visual{min-height:420px}.book-card{right:0;width:82%;padding:28px}.book-title{font-size:35px}.side-note{width:200px;bottom:0}.contact-box{padding:32px 24px}.contact-grid{gap:35px}.audiences{grid-template-columns:1fr}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniel A. Dare — Book Marketing</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;color:#1a1a1a;background:#fff;padding:40px 20px;max-width:680px;margin:0 auto}
+h1{font-size:2rem;font-weight:700;margin-bottom:8px}
+.subtitle{font-size:1.1rem;color:#555;margin-bottom:40px}
+h2{font-size:1.2rem;font-weight:600;margin-top:40px;margin-bottom:12px}
+p{margin-bottom:16px;color:#333}
+ul{margin-bottom:16px;padding-left:20px}
+li{margin-bottom:8px;color:#333}
+.contact{margin-top:48px;padding-top:24px;border-top:1px solid #eee}
+a{color:#1a1a1a}
+@media(max-width:600px){h1{font-size:1.6rem}body{padding:24px 16px}}
+</style>
 </head>
 <body>
-  <nav>
-    <div class="wrap nav">
-      <a class="brand" href="#top">Daniel A. Dare<small>Book Marketing & Reader Discovery</small></a>
-      <div class="navlinks">
-        <a href="#services">Services</a>
-        <a href="#approach">Approach</a>
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a class="cta" href="#contact">Work With Me</a>
-      </div>
-    </div>
-  </nav>
+<h1>Daniel A. Dare</h1>
+<p class="subtitle">Book Marketing & Reader Discovery Strategist</p>
 
-  <main id="top">
-    <header>
-      <div class="wrap hero">
-        <div>
-          <div class="eyebrow">Experienced Book Marketer & Reader Discovery Strategist</div>
-          <h1>The right readers are out there.</h1>
-          <h2>My work is about helping your book get discovered by them.</h2>
-          <p class="lead">I help authors get their books in front of the right target audiences, promote their work to relevant readers and communities worldwide, and strengthen long-term book visibility and growth.</p>
-          <div class="actions">
-            <a class="btn dark" href="#contact">Discuss Your Book</a>
-            <a class="btn light" href="#approach">See My Approach</a>
-          </div>
-        </div>
-        <div class="hero-visual" aria-label="Book marketing and reader discovery visual">
-          <div class="book-card">
-            <div class="book-mark">Reader Discovery</div>
-            <div class="book-title">Find the audience. Build the connection.</div>
-            <div class="book-note">Focused promotion built around the subject, audience, and natural reader communities of each book.</div>
-          </div>
-          <div class="side-note">
-            <strong>Book first. Audience second.</strong>
-            <span>Every promotion starts by understanding what makes the book worth discovering.</span>
-          </div>
-        </div>
-      </div>
-    </header>
+<h2>About</h2>
+<p>I'm a book marketer based in the UK. I help fiction authors reach more of the right readers through targeted ad campaigns, community outreach, and long-term visibility strategies.</p>
+<p>My approach is simple: I identify the specific reader communities most likely to love your book, then build a targeted plan to get your book in front of them.</p>
 
-    <section id="services">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="eyebrow">What I Do</div>
-          <h3>Promotion built around the book, not a generic formula.</h3>
-          <p class="intro">A strong book can still be overlooked when it is not reaching the communities most likely to connect with it. The work begins by identifying where that connection can happen.</p>
-        </div>
-        <div class="cards">
-          <article class="card"><div class="index">01</div><h4>Target Audience Discovery</h4><p>Identify the readers, interests, communities, and conversations that naturally fit the book.</p></article>
-          <article class="card"><div class="index">02</div><h4>Book Promotion</h4><p>Position and promote the book across relevant reader spaces instead of relying on broad, untargeted exposure.</p></article>
-          <article class="card"><div class="index">03</div><h4>Community Outreach</h4><p>Explore opportunities with book clubs, libraries, organizations, online communities, stores, and other relevant spaces.</p></article>
-        </div>
-      </div>
-    </section>
+<h2>What I Do</h2>
+<ul>
+<li><strong>Amazon Ads Management</strong> — Targeted campaigns that reach readers already searching for books like yours.</li>
+<li><strong>TikTok & BookTok Outreach</strong> — Connecting your book with the influencers and communities driving sales in fiction.</li>
+<li><strong>Newsletter & Community Promotion</strong> — Getting your book featured in reader newsletters and genre-specific communities.</li>
+<li><strong>Launch Strategy</strong> — Building visibility and momentum for new releases and backlist titles.</li>
+</ul>
 
-    <section class="dark-section" id="approach">
-      <div class="wrap dark-grid">
-        <div>
-          <div class="eyebrow">My Approach</div>
-          <h3>Start with the book. Then find where its readers already are.</h3>
-          <p class="intro">I look at the subject, themes, audience, positioning, and natural communities around a book before deciding where promotional effort should go.</p>
-          <div class="audiences">
-            <div class="audience"><strong>Reader Communities</strong><span>Groups built around specific subjects, genres, interests, and reading habits.</span></div>
-            <div class="audience"><strong>Libraries & Book Clubs</strong><span>Spaces where books can become part of ongoing reader conversation.</span></div>
-            <div class="audience"><strong>Organizations</strong><span>Communities whose work or interests naturally overlap with the book.</span></div>
-            <div class="audience"><strong>Online Discovery</strong><span>Digital spaces where interested readers already discuss related topics.</span></div>
-          </div>
-        </div>
-        <div class="steps">
-          <div class="step"><div class="step-num">STEP 01</div><div><h4>Understand the book</h4><p>Study its subject, themes, positioning, and strongest reasons a reader would care.</p></div></div>
-          <div class="step"><div class="step-num">STEP 02</div><div><h4>Map the audience</h4><p>Identify the most relevant reader segments and the communities already aligned with them.</p></div></div>
-          <div class="step"><div class="step-num">STEP 03</div><div><h4>Build the connection</h4><p>Create practical promotional opportunities that introduce the book to the right people.</p></div></div>
-          <div class="step"><div class="step-num">STEP 04</div><div><h4>Strengthen momentum</h4><p>Work toward sustained discoverability, audience growth, and long-term book visibility.</p></div></div>
-        </div>
-      </div>
-    </section>
+<h2>Results</h2>
+<p>I recently helped a debut romance author go from 12 reviews to over 150 in 90 days using a combination of targeted Amazon Ads and BookTok outreach.</p>
+<p><em>(Replace this with your own result as soon as you have one. If you haven't done this for anyone yet, do the first one free in exchange for a testimonial.)</em></p>
 
-    <section id="about">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="eyebrow">About Daniel</div>
-          <h3>Experienced in helping authors find new audiences.</h3>
-        </div>
-        <div class="about">
-          <div class="about-box">
-            <p>I'm Daniel A. Dare, an experienced book marketer and reader discovery strategist based in the UK.</p>
-            <div class="highlight">I've worked with a number of authors whose books have reached different places and reader communities, and I've helped them find new audiences for their work.</div>
-          </div>
-          <div class="about-box">
-            <p>My focus is on useful, targeted promotion: understanding what makes a book distinctive, identifying the readers who are most likely to connect with it, and creating paths for that book to be discovered.</p>
-            <div class="highlight">Examples of previous work and results can be shared with authors who are interested.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="dark-section" id="work">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="eyebrow">Selected Work</div>
-          <h3>Evidence matters.</h3>
-          <p class="intro">I prefer to discuss previous work honestly and specifically. Rather than publish made-up numbers or testimonials, I can share relevant examples and results directly with authors who want to review them.</p>
-        </div>
-        <div class="work">
-          <article class="work-card"><div class="eyebrow">Author Support</div><h4>Reader discovery campaigns</h4><p>Focused work designed around a book's subject, audience, and the communities most closely connected to it.</p><a href="#contact">Ask about relevant examples →</a></article>
-          <article class="work-card"><div class="eyebrow">Growth Focus</div><h4>Audience and visibility development</h4><p>Promotional activity aimed at strengthening discoverability and expanding a book's reach over time.</p><a href="#contact">Ask about previous work →</a></article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="section-head">
-          <div class="eyebrow">Questions Authors Ask</div>
-          <h3>A straightforward way to start.</h3>
-        </div>
-        <div class="faq">
-          <details open><summary>Do you work with different types of books?</summary><p>Yes. The approach is adapted to the subject, genre, audience, and goals of each individual book.</p></details>
-          <details><summary>What does reader discovery mean?</summary><p>It means identifying the readers and communities most likely to value a book and finding practical ways to put the book in front of them.</p></details>
-          <details><summary>Do you guarantee sales?</summary><p>No. Promotion can improve exposure and create opportunities for discovery, but no ethical marketer can guarantee a particular number of sales, reviews, or readers.</p></details>
-          <details><summary>Can I see examples of your previous work?</summary><p>Yes. Relevant examples and results can be shared when discussing a project, including work that is appropriate to show privately.</p></details>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="wrap">
-        <div class="contact-box">
-          <div class="contact-grid">
-            <div>
-              <div class="eyebrow">Get In Touch</div>
-              <h3>Let’s talk about where your book can be discovered.</h3>
-              <p class="intro">Tell me about your book and what you would like to achieve. We can begin with a conversation about its audience, reader communities, and promotion opportunities.</p>
-            </div>
-            <div>
-              <a class="btn dark" href="mailto:danieladare35@gmail.com?subject=Book%20Marketing%20%26%20Reader%20Discovery%20Inquiry">Email Daniel</a>
-              <a class="contact-email" href="mailto:danieladare35@gmail.com">danieladare35@gmail.com</a>
-              <div class="contact-meta">Experienced Book Marketer & Reader Discovery Strategist<br>United Kingdom</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer">
-      <span>© <span id="year"></span> Daniel A. Dare</span>
-      <span>Book Marketing & Reader Discovery</span>
-      <span>United Kingdom</span>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<div class="contact">
+<h2>Contact</h2>
+<p>Interested in working together? Send me an email and I'll share a few ideas for your book — no obligation.</p>
+<p><strong>Email:</strong> <a href="mailto:danieladare35@gmail.com">danieladare35@gmail.com</a></p>
+</div>
 </body>
 </html>
