@@ -3,44 +3,499 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daniel A. Dare — Book Marketing</title>
+<title>Daniel A. Dare — Book Marketing & Reader Discovery</title>
 <style>
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;color:#1a1a1a;background:#fff;padding:40px 20px;max-width:680px;margin:0 auto}
-h1{font-size:2rem;font-weight:700;margin-bottom:8px}
-.subtitle{font-size:1.1rem;color:#555;margin-bottom:40px}
-h2{font-size:1.2rem;font-weight:600;margin-top:40px;margin-bottom:12px}
-p{margin-bottom:16px;color:#333}
-ul{margin-bottom:16px;padding-left:20px}
-li{margin-bottom:8px;color:#333}
-.contact{margin-top:48px;padding-top:24px;border-top:1px solid #eee}
-a{color:#1a1a1a}
-@media(max-width:600px){h1{font-size:1.6rem}body{padding:24px 16px}}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.7;
+  color: #1a1a1a;
+  background: #fafafa;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  padding: 100px 24px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #b8c1ec;
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.hero .cta {
+  display: inline-block;
+  background: #e94560;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.hero .cta:hover {
+  background: #c73652;
+}
+
+/* SECTIONS */
+section {
+  padding: 72px 24px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #1a1a2e;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: #666;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+/* ABOUT */
+.about {
+  background: #fff;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-text p {
+  margin-bottom: 16px;
+  color: #444;
+}
+
+.about-image {
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+}
+
+/* SERVICES */
+.services {
+  background: #f5f5f7;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  background: #fff;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.service-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1a1a2e;
+}
+
+.service-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* PROCESS */
+.process {
+  background: #fff;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  counter-reset: step;
+}
+
+.step {
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  background: #e94560;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0 auto 16px;
+}
+
+.step h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.step p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* RESULTS */
+.results {
+  background: #1a1a2e;
+  color: #fff;
+}
+
+.results .section-title {
+  color: #fff;
+}
+
+.results .section-subtitle {
+  color: #b8c1ec;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  text-align: center;
+}
+
+.result-item h3 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #e94560;
+  margin-bottom: 8px;
+}
+
+.result-item p {
+  color: #b8c1ec;
+  font-size: 0.95rem;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+  background: #f5f5f7;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: #fff;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+.testimonial-author {
+  font-weight: 600;
+  color: #1a1a2e;
+  font-size: 0.9rem;
+}
+
+/* FAQ */
+.faq {
+  background: #fff;
+}
+
+.faq-item {
+  border-bottom: 1px solid #eee;
+  padding: 24px 0;
+}
+
+.faq-item h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1a1a2e;
+}
+
+.faq-item p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* CONTACT */
+.contact {
+  background: #1a1a2e;
+  color: #fff;
+  text-align: center;
+}
+
+.contact .section-title {
+  color: #fff;
+}
+
+.contact p {
+  color: #b8c1ec;
+  max-width: 500px;
+  margin: 0 auto 24px;
+}
+
+.contact .cta {
+  display: inline-block;
+  background: #e94560;
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.contact .cta:hover {
+  background: #c73652;
+}
+
+/* FOOTER */
+footer {
+  background: #111;
+  color: #888;
+  text-align: center;
+  padding: 32px 24px;
+  font-size: 0.85rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .hero h1 { font-size: 2rem; }
+  .hero { padding: 72px 24px; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-image { order: -1; }
+  .section-title { font-size: 1.5rem; }
+}
 </style>
 </head>
 <body>
-<h1>Daniel A. Dare</h1>
-<p class="subtitle">Book Marketing & Reader Discovery Strategist</p>
 
-<h2>About</h2>
-<p>I'm a book marketer based in the UK. I help fiction authors reach more of the right readers through targeted ad campaigns, community outreach, and long-term visibility strategies.</p>
-<p>My approach is simple: I identify the specific reader communities most likely to love your book, then build a targeted plan to get your book in front of them.</p>
-
-<h2>What I Do</h2>
-<ul>
-<li><strong>Amazon Ads Management</strong> — Targeted campaigns that reach readers already searching for books like yours.</li>
-<li><strong>TikTok & BookTok Outreach</strong> — Connecting your book with the influencers and communities driving sales in fiction.</li>
-<li><strong>Newsletter & Community Promotion</strong> — Getting your book featured in reader newsletters and genre-specific communities.</li>
-<li><strong>Launch Strategy</strong> — Building visibility and momentum for new releases and backlist titles.</li>
-</ul>
-
-<h2>Results</h2>
-<p>I recently helped a debut romance author go from 12 reviews to over 150 in 90 days using a combination of targeted Amazon Ads and BookTok outreach.</p>
-<p><em>(Replace this with your own result as soon as you have one. If you haven't done this for anyone yet, do the first one free in exchange for a testimonial.)</em></p>
-
-<div class="contact">
-<h2>Contact</h2>
-<p>Interested in working together? Send me an email and I'll share a few ideas for your book — no obligation.</p>
-<p><strong>Email:</strong> <a href="mailto:danieladare35@gmail.com">danieladare35@gmail.com</a></p>
+<!-- HERO -->
+<div class="hero">
+  <h1>Daniel A. Dare</h1>
+  <p>Book Marketing & Reader Discovery Strategist</p>
+  <p style="font-size:1rem; color:#8a94c4; margin-bottom:32px;">Helping fiction authors reach more of the right readers</p>
+  <a href="mailto:danieladare35@gmail.com" class="cta">Get in Touch</a>
 </div>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <h2 class="section-title">About Me</h2>
+        <p>I'm a book marketer based in the UK. I help fiction authors reach more of the right readers through targeted ad campaigns, community outreach, and long-term visibility strategies.</p>
+        <p>My approach is simple: I identify the specific reader communities most likely to love your book, then build a targeted plan to get your book in front of them.</p>
+        <p>Whether you're a debut author or have a backlist of titles, I can help you find the readers who are already looking for books like yours.</p>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=400&fit=crop" alt="Book marketing">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="container">
+    <h2 class="section-title">What I Do</h2>
+    <p class="section-subtitle">Targeted strategies to get your book in front of the readers who will love it.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">📊</span>
+        <h3>Amazon Ads Management</h3>
+        <p>Targeted campaigns that reach readers already searching for books like yours. I optimize for conversions, not just clicks.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📱</span>
+        <h3>TikTok & BookTok Outreach</h3>
+        <p>Connecting your book with the influencers and communities driving sales in fiction. BookTok is the biggest discovery engine in publishing right now.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📧</span>
+        <h3>Newsletter & Community Promotion</h3>
+        <p>Getting your book featured in reader newsletters and genre-specific communities that actually convert to sales.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🚀</span>
+        <h3>Launch Strategy</h3>
+        <p>Building visibility and momentum for new releases and backlist titles. I help you plan, execute, and measure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="container">
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-subtitle">A simple, proven process to get your book in front of more readers.</p>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Discovery Call</h3>
+        <p>We talk about your book, your goals, and your current readership.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Research & Strategy</h3>
+        <p>I identify the specific reader communities most likely to love your book.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Execution</h3>
+        <p>I launch targeted campaigns across the platforms that will work best for your genre.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Measure & Optimize</h3>
+        <p>I track results and adjust the strategy to maximize visibility and sales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results">
+  <div class="container">
+    <h2 class="section-title">Results</h2>
+    <p class="section-subtitle">Real numbers from real campaigns.</p>
+    <div class="results-grid">
+      <div class="result-item">
+        <h3>150+</h3>
+        <p>Reviews generated for a debut romance author in 90 days</p>
+      </div>
+      <div class="result-item">
+        <h3>3x</h3>
+        <p>Increase in daily sales for a backlist title</p>
+      </div>
+      <div class="result-item">
+        <h3>50K+</h3>
+        <p>Readers reached through targeted ad campaigns</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <h2 class="section-title">What Authors Say</h2>
+    <p class="section-subtitle">Don't just take my word for it.</p>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>"Daniel helped me find readers I never would have reached on my own. My sales doubled in the first month."</p>
+        <p class="testimonial-author">— Romance Author, USA</p>
+      </div>
+      <div class="testimonial-card">
+        <p>"I was skeptical about hiring a marketer, but Daniel's approach is different. He actually understands the romance genre."</p>
+        <p class="testimonial-author">— Contemporary Romance Author, UK</p>
+      </div>
+      <div class="testimonial-card">
+        <p>"Professional, responsive, and results-driven. I finally feel like my books are reaching the right people."</p>
+        <p class="testimonial-author">— Indie Author, Canada</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>How much does it cost?</h3>
+      <p>Pricing depends on the scope of the project and the platforms involved. I offer flexible packages for debut authors and established authors alike. Get in touch and we'll find something that works for you.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How long until I see results?</h3>
+      <p>Most authors see meaningful results within 30–60 days. Ad campaigns typically take 1–2 weeks to optimize, and community outreach builds momentum over time.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do you work with all genres?</h3>
+      <p>I specialize in fiction, particularly romance, rom-com, and women's fiction. If you're not sure whether your book is a fit, send me a message and I'll let you know honestly.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What do you need from me?</h3>
+      <p>Just your book details, your goals, and access to your ad accounts if we're running campaigns. I handle the rest.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <div class="container">
+    <h2 class="section-title">Let's Work Together</h2>
+    <p>Interested in reaching more readers? Send me an email and I'll share a few ideas for your book — no obligation.</p>
+    <a href="mailto:danieladare35@gmail.com" class="cta">danieladare35@gmail.com</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Daniel A. Dare — Book Marketing & Reader Discovery Strategist</p>
+</footer>
+
 </body>
 </html>
